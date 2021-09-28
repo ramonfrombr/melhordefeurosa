@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Melhor de Feu Rosa</title>
+
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/secoes/navbar.css') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/secoes/navbar_mobile.css') }}">
+
+
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-4.0.0.min.css') }}">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+    <!-- Fonte Roboto Slab -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+
+    <!-- Fonte Unica One -->
+    <link href="https://fonts.googleapis.com/css2?family=Unica+One&display=swap" rel="stylesheet">
+    
+    <!-- Fonte Merienda-->
+    <link href="https://fonts.googleapis.com/css2?family=Merienda&display=swap" rel="stylesheet">
+
+
+    
+
+    <script src="{{ url_for('static', filename='js/fontawesome.js') }}"></script>
+
+</head>
+<body>
+
+{% include 'secoes/navbar.html' %}
+
+<div id="secao-principal" class="container">
+
+    <div class="row row-lg-4">
+        <div class="col">
+            {% block cabecalho %}
+            {% include 'secoes/cabecalho.html' %}
+            {% endblock %}
+        </div>
+    </div>
+
+    {% include 'macros/mensagens.html' %}
+
+    {% block conteudo %}
+    <div class="row">
+        <div class="col-lg-9">
+            {% block secaoesquerda %}
+            {% endblock %}
+        </div>
+
+        <div class="col-lg-3 rounded">
+            {% block secaodireita %}
+            {% include 'secoes/secaodireita.html' %}
+            {% endblock %}
+        </div>
+    </div>
+    {% endblock %}
+    {% include 'secoes/rodape.html' %}
+</div>
+
+<!--<script src="../static/js/script.js"></script>-->
+
+<!--<script src="../static/js/socket.io.js"></script>-->
+
+
+<script src="{{ url_for('static', filename='js/secoes/navbar.js') }}"></script>
+
+<script src="{{ url_for('static', filename='js/jquery-3.5.1.js') }}"></script>
+
+
+
+
+
+
+{% block scriptsfim %}
+{% endblock %}
+
+<!--
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+-->
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+</body>
+</html>

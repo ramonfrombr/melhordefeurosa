@@ -1,0 +1,46 @@
+{% extends 'layout.html' %}
+
+{% import 'macros/lista_pedidos.html' as macros %}
+
+{% block titulo %}Painel{% endblock %}
+
+{% block secaoesquerda %}
+
+    <form action="">
+        <div class="">
+            <input id="mensagemModal" type="text">
+        </div>
+        
+        <div class="">
+            <input id="botaoModal" class="botao" type="button" value="Criar modal">
+        </div>
+    </form>
+
+
+    <form action="">
+        <div class="form-group">
+            <label for="tituloPublicacao">Título da publicação</label>
+            <input id="tituloPublicacao" name="tituloPublicacao" class="form-control" type="text">
+        </div>
+
+        <div class="form-group">
+            <label for="conteudoPublicacao">Conteúdo da publicação</label>
+            <textarea id="conteudoPublicacao" name="conteudoPublicacao" class="form-control" cols="30" rows="10"></textarea>
+        </div>
+
+        <div class="">
+            <input id="botaoPublicacao" class="botao" type="button" value="Criar publicação">
+        </div>
+    </form>
+
+
+    <div id="publicacoes">
+
+    </div>
+
+
+    <div style="border: 1px solid red;">
+    {{ macros.criar_lista_pedidos(pedidos) }}
+    </div>
+
+{% endblock %}

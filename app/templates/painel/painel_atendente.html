@@ -1,0 +1,9 @@
+{% extends 'layout.html' %}
+
+{% import 'macros.html' as macros %}
+
+{% block titulo %}Painel{% endblock %}
+
+{% block secaoesquerda %}
+{% macros.criar_lista_pedidos(lista) %}
+{% endblock %}

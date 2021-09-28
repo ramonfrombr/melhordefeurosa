@@ -1,0 +1,574 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    margin: 0 auto;
+}
+
+
+main {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.botao {
+    background: rgb(21, 16, 53);
+    padding: 1em 2em;
+    color: aliceblue;
+    border: 0;
+}
+
+.botao:hover {
+    background: #333;
+}
+
+.janela-modal {
+    /*display: none;*/
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.conteudo-modal {
+    background-color: #fafafa;
+    margin: 10% auto;
+    padding: 20px;
+    width: 70%;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17 );
+}
+
+
+.botao-fechar-modal {
+    color: blue;
+    float: right;
+    font-size: 30px;
+}
+
+.botao-fechar-modal:hover, .botao-fechar-modal:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+
+/* ESTILIZAÇÃO DO COMPONENTE 'listaDePublicacoes */ 
+
+#publicacoes {
+    border: solid 1px rgb(180, 180, 180);
+    padding: 10px;
+}
+
+
+
+
+
+/* ESTILIZAÇÃO DO COMPONENTE 'Publicacao' */
+
+.publicacao {
+    background-color: rgb(255, 255, 255);
+    border: solid 1px rgb(200, 200, 200);
+    padding: 5px;
+    margin: 0 auto;
+    margin-bottom: 5px;
+    width: 90%;
+}
+
+@keyframes publicacao-desaparecendo {
+
+    0% {height: 100%;}
+    100% {height: 0%;}
+}
+
+.publicacao-desaparecendo {
+    animation-name: publicacao-desaparecendo;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+}
+
+
+
+.container-opcoes-publicacao {
+    
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.container-opcoes-publicacao > span {
+    color: white;
+
+    font-size: 0.8rem;
+    font-weight: bold;
+
+    padding: 4px;
+    border-radius: 18px 18px 18px 18px;
+
+}
+
+.botao-editar-publicacao {
+
+    margin-left: 5px;
+    background-color: rgb(104, 104, 104);
+}
+
+.botao-editar-publicacao:hover {
+    cursor: pointer;
+    background-color: rgb(114, 114, 114);
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.5), 0 1px 1px 0 rgba(0, 0, 0, 0.5 );
+}
+
+.botao-apagar-publicacao {
+    background-color: red;
+}
+
+.botao-apagar-publicacao:hover {
+
+    cursor: pointer;
+    background-color: rgb(255, 0, 0);
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.5), 0 1px 1px 0 rgba(0, 0, 0, 0.5 );
+
+}
+
+.span-autor-publicacao {
+    margin-right: 5px;
+}
+
+.span-data-criacao-publicacao {
+    margin-right: 5px;
+}
+
+
+
+.titulo-publicacao {
+    margin-bottom: 10px;
+}
+
+.conteudo-publicacao {
+    
+}
+
+.border-black {
+    border: solid 1px black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#opcao_curso li {
+    list-style-type: none;
+}
+
+#horario li {
+    list-style-type: none;
+}
+
+@media (min-width: 600px) {
+
+    #formulario-curso {
+        width: 70%;
+    }
+}
+
+
+#container-formulario-inscricao-curso {
+    margin: 1em;
+}
+
+
+#ultimas-publicacoes {
+    font-family: "Unica One", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+}
+
+#carrossel-ultimas-publicacoes {
+    font-family: "Unica One", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+}
+
+#carrossel-ultimas-publicacoes h3 {
+    margin-bottom: 0;
+    text-align: left;
+    padding: 2px;
+    background-color: rgb(35, 109, 247);
+}
+
+#carrossel-ultimas-publicacoes p {
+    text-align: left;
+    
+}
+
+#carrossel-ultimas-publicacoes p > span {
+    margin-bottom: 0;
+    padding: 2px;
+    background-color: rgb(99, 148, 238);
+}
+
+
+
+.div-imagem-curso {
+    text-align: center;
+    border: 1px rgb(207, 207, 207) solid;
+}
+
+.imagem-curso {
+    width: 100%;
+}
+
+
+.altura-50 {
+    height: 50%;
+}
+
+
+.elemento-1px-abaixo {
+    position: relative;
+    top: 1px;
+}
+
+
+/* ------------------------------------------------------- */
+
+
+.container-formulario-edicao {
+    position: relative;
+    display: block;
+    height: 0%;
+    visibility: hidden;
+}
+
+
+@keyframes container-formulario-edicao-expandindo {
+
+    0% {height: 0%; margin-bottom: 0rem;}
+    99% {visibility: hidden;}
+    100% {height: 100%; visibility: visible;  margin-bottom: 5rem;}
+}
+
+.container-formulario-edicao-expandindo {
+    animation-name: container-formulario-edicao-expandindo;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+}
+
+.container-formulario-edicao-expandido {
+    position: relative;
+    display: block;
+    visibility: visible;
+    height: 100%;
+    margin-bottom: 5rem;
+}
+
+
+/* ------------------------------------------------------- */
+
+
+@keyframes container-formulario-edicao-encolhendo {
+
+    0% {height: 100%; margin-bottom: 5rem;}
+    100% {height: 0%; margin-bottom: 0rem;}
+}
+
+.container-formulario-edicao-encolhendo {
+    animation-name: container-formulario-edicao-encolhendo;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+}
+
+
+/* ------------------------------------------------------- */
+
+
+.div-formulario {
+
+    overflow: hidden;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+
+    padding: 0rem;
+
+    width: 2px;
+    height: 2px;
+    transition: width 0.1s, height 0.1s, padding 0.05s;
+}
+
+.div-formulario-expandindo {
+
+    padding: 1rem;
+    width: 100%;
+    height: 100%;
+}
+
+
+.checkbox-tag-edicao {
+    position: relative;
+    top: 3px;
+}
+
+
+
+.cursor-pointer:hover {
+    cursor: pointer;
+}
+
+
+
+/*******************************************************************************************/
+/*******************************************************************************************/
+/*******************************************************************************************/
+
+
+/* GLOBAL */
+
+/* Esconde a barra de scroll (mas scroll ainda fica habilitado) */
+body::-webkit-scrollbar {display:none;}
+
+p {
+    overflow-wrap: break-word;
+}
+
+/* Remove padding da lista de publicação no mural */
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+/* Garante que as listas dentros dos cartões das publicação no mural tenham padding correto e não fiquem fora do cartão */
+div.paragrafo-publicacao > ul {
+    padding-inline-start: 40px;
+}
+
+
+.tags-container {
+    position: relative;
+    bottom: 1px;
+    margin-left: 5px;
+}
+
+#container-pagina-publicacao {
+    margin: 1em auto;
+}
+
+@media only screen and (min-width: 768px) {
+
+    #container-pagina-publicacao {
+        width: 80%;
+        margin: 3em auto;
+    }
+}
+
+.tags-envelope-publicacao {
+    position: relative;
+    bottom: 1px;
+}
+
+/* FIM ESTILIZAÇÃO GLOBAL */
+
+
+/*******************************************************************************************/
+/*******************************************************************************************/
+/*******************************************************************************************/
+
+/* AVISOS */
+
+
+.aviso-sucesso {
+    border: solid 1px green;
+    background-color: #09b603;
+    color: lightyellow;
+}
+
+
+
+/* UTILIDADES */
+
+/* Fundo cinza 1 */
+.bg-grey1 {
+    background-color: #f0f0f0;
+}
+
+/* Fundo cinza 2 */
+.bg-grey2 {
+    background-color: #c4c4c4;
+}
+
+/* Fundo cinza 3 */
+.bg-grey3 {
+    background-color: #858585;
+}
+
+
+.borda-sub-menu {
+    border-bottom: 1px rgb(107, 107, 107) solid;
+}
+
+.margem-secao-principal {
+    padding-top: 3em;
+}
+
+/* FIM ESTILIZAÇÃO DAS UTILIDADES */
+
+
+
+/*******************************************************************************************/
+/*******************************************************************************************/
+/*******************************************************************************************/
+
+
+/* SEÇÃO PRINCIPAL */
+
+#carrossel_cabecalho {
+    overflow: hidden;
+    max-height: 10rem;
+}
+
+
+/* Padding lateral em telas pequenas */
+#secao-principal {
+    
+    background-color: rgb(255, 255, 255);
+    /*
+    padding-left: 1rem;
+    padding-right: 1rem;
+    */
+
+}
+
+/* Padding lateral em telas grandes 
+@media only screen and (min-width: 768px) {
+   
+    #secao-principal {
+        padding-left: 5rem;
+        padding-right: 5rem;
+    }
+}
+*/
+
+/* Margem 0 no Grid */
+.row {
+    margin: 0 auto;
+}
+
+
+
+/*******************************************************************************************/
+/*******************************************************************************************/
+/*******************************************************************************************/
+
+
+/* A imagem de fundo foi removida, portanto as configurações abaixo não estão sendo usadas */
+
+/* Imagem no fundo da seção principal */
+#wallpaper {
+
+    /* Define regras para preencher o fundo */
+    min-height: 100%;
+    min-width: 1024px;
+
+    /* Define redimensionamento proporcional */
+    width: 100%;
+    height: auto;
+
+    /* Define posicionamento */
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    /* Garante que o papel de fundo ficará no fundo */
+    z-index: -5;
+}
+
+/* Exibe a imagem de fundo de forma mais atraente em dispositivos com telas menores que 1024 */
+@media screen and (max-width: 1024px) { /* Específico para esta imagem */
+  #wallpaper {
+    left: 50%;
+    margin-left: -512px;   /* 50% */
+  }
+}
+
+/* FIM SEÇÃO PRINCIPAL */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

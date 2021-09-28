@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+
+{% import 'macros/lista_pedidos.html' as macros %}
+
+{% block titulo %}Painel{% endblock %}
+
+
+{% block secaoesquerda %}
+
+    <h2>Novo Pedido</h2>
+
+    <div id="container_formulario">
+
+    </div>
+
+    <div style="border: 1px solid grey;">
+    {{ macros.criar_lista_pedidos(pedidos) }}
+    </div>
+
+{% endblock %}
+
+{% block secaodireita %}
+
+    <h3>Últimos pedidos</h3>
+
+    <ul>
+        {% for pedido in pedidos %}
+        <li>Número do pedido: {{ pedido.id }}</li>
+        {% endfor %}
+    </ul>
+    
+
+{% endblock %}
+
+{% block scriptsfim %}
+<script src="../static/js/pedidos.js"></script>
+{% endblock %}

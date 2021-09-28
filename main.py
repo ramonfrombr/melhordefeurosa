@@ -1,15 +1,14 @@
-from flask import Flask
+import os
+from app import criar_app, socketio
 from config import ConfiguracaoDesenvolvimento
 
 
-app = Flask(__name__)
-app.config.from_object(ConfiguracaoDesenvolvimento())
+#env = os.environ.get('WEBAPP_ENV', 'dev')
+#app = criar_app('config.%sConfig' % env.capitalize())
 
 
-@app.route('/')
-def inicio():
-    return "Olá, mundo!"
-
+app = criar_app(ConfiguracaoDesenvolvimento)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+    socketio.run(app)
+    #app.run()

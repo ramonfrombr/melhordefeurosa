@@ -1,0 +1,13 @@
+{% macro criar_lista_pedidos(pedidos) %}
+
+    <h1>Lista de Pedidos</h1>
+
+    {% for pedido in pedidos %}
+        <div>
+            <h2>Pedido #{{ pedido.id }}</h2>
+            <span>{{ pedido.data_registro }}</span>
+            <p><b>Total:</b> R$ {{ pedido.valor_total }}</p>
+        </div>
+    {% endfor %}
+    
+{% endmacro %}
